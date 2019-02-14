@@ -1,0 +1,46 @@
+
+<%= simple_form_for(@form_n400, html: {id: 'SignupForm'}) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <fieldset>
+      <legend> Part 1</legend>
+      <%= f.input :nine_digit_number, placeholder: '123456789' %>
+      <%= f.input :citizen_5_years %>
+      <%= f.input :citizen_3_years %>
+      <%= f.input :citizen_spouse %>
+      <%#= f.input :field_office_id, as: :select, collection: [['0', 'Female'], ['1', 'Male']], label_method: :second, value_method: :first %>
+      <%= collection_select(:form_n400, :field_office_id, FieldOffice.order(:name), :id, :name, {}, {:multiple => false}) %>
+      <%= f.input :military_service %>
+      <%= f.input :other %>
+    </fieldset>
+
+    <fieldset>
+      <legend> Part 2</legend>
+      <%= f.input :legal_last_name %>
+      <%= f.input :legal_first_name %>
+      <%= f.input :legal_middle_name %>
+      <%= f.input :resident_last_name %>
+      <%= f.input :resident_first_name %>
+      <%= f.input :resident_middle_name %>
+      <%= f.input :social_security %>
+      <%= f.input :uscis_number %>
+      <%= f.input :gender, as: :radio_buttons, collection: [['0', 'Female'], ['1', 'Male']], label_method: :second, value_method: :first %>
+      <%= f.input :date_of_birth %>
+      <%= f.input :date_permanent_resident %>
+      <%#= f.input :birth_country %>
+      <%#= f.input :citizen_country %>
+      <%= f.input :physical_disability, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %> 
+      <%= f.input :above_50, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %> 
+      <%= f.input :above_55, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %> 
+      <%= f.input :above_65, as: :radio_buttons, collection: [['0', 'Yes'], ['1', 'No']], label_method: :second, value_method: :first %> 
+    </fieldset>
+  <div class="form-actions">
+    <%= f.button :submit, id: 'SaveAccount' %>
+  </div>
+<% end %>
+
+
+<%#= collection_select(:invoice, :salesperson_id, Salesperson.all, :id, :name, {}, { :multiple => false}) %>
+
+<%#= f.input :location_id, collection: @locations, label_method: :location_name, value_method: :id,label: "Location", include_blank: false, selected: @bill.location_id %>

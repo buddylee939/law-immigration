@@ -1,0 +1,25 @@
+
+<%= simple_form_for(@citizen_form, html: {id: 'SignupForm'}) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  
+    <fieldset>
+      <legend>Personal</legend>
+      <%= f.input :name %>
+      <%= f.input :date_of_birth %>
+      <%= f.input :bio %>          
+    </fieldset>
+
+    <fieldset>
+      <legend>Socials</legend>
+      <%= f.input :twitter %>
+      <%= f.input :github %>
+      <%= f.input :website %>
+    </fieldset>
+    <%#= f.association :user %>
+
+
+  <div class="form-actions">
+    <%= f.button :submit, id: 'SaveAccount' %>
+  </div>
+<% end %>

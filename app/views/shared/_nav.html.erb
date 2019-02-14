@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'Citizen Form', citizen_forms_path %></li>
+    <li><%= link_to 'N-400 Form', form_n400s_path %></li>
+    <li><%= link_to 'Field Offices', field_offices_path %></li>
+    <li><%= link_to 'Login', new_user_session_path %></li>        
+    <% if user_signed_in? %>
+      <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+    <% end %>
+  </ul>
+</nav>

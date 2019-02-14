@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  state: MyString
+  name: MyString
+  form_n400: one
+
+two:
+  state: MyString
+  name: MyString
+  form_n400: two

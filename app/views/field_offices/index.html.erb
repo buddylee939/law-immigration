@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Field Offices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Name</th>
+      <th>Form n400</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @field_offices.each do |field_office| %>
+      <tr>
+        <td><%= field_office.state %></td>
+        <td><%= field_office.name %></td>
+        <td><%= link_to 'Show', field_office %></td>
+        <td><%= link_to 'Edit', edit_field_office_path(field_office) %></td>
+        <td><%= link_to 'Destroy', field_office, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Field Office', new_field_office_path %>

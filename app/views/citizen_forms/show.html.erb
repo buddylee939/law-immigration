@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @citizen_form.name %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @citizen_form.date_of_birth %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @citizen_form.bio %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @citizen_form.twitter %>
+</p>
+
+<p>
+  <strong>Github:</strong>
+  <%= @citizen_form.github %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @citizen_form.website %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @citizen_form.user.email %>
+</p>
+
+<%= link_to 'Edit', edit_citizen_form_path(@citizen_form) %> |
+<%= link_to 'Back', citizen_forms_path %>

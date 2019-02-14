@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Form N400s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nine digit number</th>
+      <th>Citizen 5 years</th>
+      <th>Citizen 3 years</th>
+      <th>Citizen spouse</th>
+      <th>Military service</th>
+      <th>Other</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @form_n400s.each do |form_n400| %>
+      <tr>
+        <td><%= form_n400.nine_digit_number %></td>
+        <td><%= form_n400.citizen_5_years %></td>
+        <td><%= form_n400.citizen_3_years %></td>
+        <td><%= form_n400.citizen_spouse %></td>
+        <td><%= form_n400.military_service %></td>
+        <td><%= form_n400.other %></td>
+        <td><%= form_n400.user.email %></td>
+        <td><%= link_to 'Show', form_n400 %></td>
+        <td><%= link_to 'Edit', edit_form_n400_path(form_n400) %></td>
+        <td><%= link_to 'Destroy', form_n400, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Form N400', new_form_n400_path %>

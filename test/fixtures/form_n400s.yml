@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nine_digit_number: MyString
+  citizen_5_years: false
+  citizen_3_years: false
+  citizen_spouse: false
+  military_service: false
+  other: false
+  user: one
+
+two:
+  nine_digit_number: MyString
+  citizen_5_years: false
+  citizen_3_years: false
+  citizen_spouse: false
+  military_service: false
+  other: false
+  user: two

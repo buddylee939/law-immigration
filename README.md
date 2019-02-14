@@ -1,0 +1,3 @@
+# Steps
+
+rails g migration add_part_2_to_form_n400s legal_last_name legal_first_name legal_middle_name resident_last_name resident_first_name resident_middle_name social_security uscis_number gender:integer date_of_birth:date date_permanent_resident:date birth_country citizen_country physical_disability:integer above_50:integer above_55:integer above_65:integer
