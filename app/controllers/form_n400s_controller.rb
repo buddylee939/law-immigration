@@ -11,6 +11,8 @@ class FormN400sController < ApplicationController
   # GET /form_n400s/1
   # GET /form_n400s/1.json
   def show
+    @field_office = FieldOffice.where(id: @form_n400.field_office_id).first
+    # @field_office = FieldOffice.where(id: 5).first
   end
 
   # GET /form_n400s/new
